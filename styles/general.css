@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Roboto, arial;
+}
+
+body {
+  padding-top: 77px;
+  padding-left: 96px;
+  padding-right: 20px;
+  padding-bottom: 50px;
+  background-color: #f4f4f4;
+}
+
+@media (max-width: 428px) {
+  body {
+    padding-left: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    padding-left: 250px;
+  }
+}
+/*# sourceMappingURL=general.css.map */

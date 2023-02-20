@@ -1,0 +1,124 @@
+@mixin giant {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin pad {
+  @media (max-width: 810px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: 428px) {
+    @content;
+  }
+}
+.grid-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  @include giant {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  @include pad {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+  column-gap: 15px;
+  row-gap: 40px;
+  .card {
+    width: 100%;
+    .video-preview {
+      margin-bottom: 8px;
+      position: relative;
+      cursor: pointer;
+      img {
+        width: 100%;
+      }
+      .video-time {
+        background-color: black;
+        color: white;
+        position: absolute;
+        bottom: 8px;
+        right: 5px;
+        padding: 4px;
+        border-radius: 3px;
+      }
+    }
+    .video-des-grid {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+    }
+    .profile-picture {
+      position: relative;
+      .profile-img {
+        width: 75%;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover ~ .channel-tooltip {
+          display: block;
+        }
+      }
+      .channel-tooltip {
+        position: absolute;
+        bottom: -80px;
+        display: flex;
+        width: 250px;
+        padding: 20px;
+        border-radius: 6px;
+        background-color: rgb(255, 255, 255);
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+        display: none;
+        pointer-events: none;
+        z-index: 300;
+        .tooltip-profile-img {
+          width: 25%;
+          border-radius: 50%;
+          margin-right: 20px;
+        }
+        .tooltip-content-box {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: start;
+          .tooltip-profile-author {
+            font-weight: 700;
+            margin-bottom: 5px;
+          }
+          .tooltip-profile-subcribers {
+            font-weight: 400;
+            color: gray;
+          }
+        }
+      }
+    }
+    .video-info {
+      .title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 22px;
+        margin-bottom: 18px;
+        @include giant {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        @include mobile {
+          margin-bottom: 12px;
+        }
+      }
+      .author,
+      .stats {
+        color: gray;
+        font-size: 15px;
+        @include giant {
+          font-size: 14px;
+        }
+      }
+      .author {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

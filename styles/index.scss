@@ -1,0 +1,19 @@
+@import "general.scss";
+@import "header.scss";
+@import "video.scss";
+@import "./sidebar.scss";
+@mixin giant {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin pad {
+  @media (max-width: 810px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: 428px) {
+    @content;
+  }
+}

@@ -1,0 +1,61 @@
+@mixin giant {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin pad {
+  @media (max-width: 810px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width: 428px) {
+    @content;
+  }
+}
+.sidebar {
+  background-color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 54px;
+  border-right: 1px solid rgb(224, 224, 224);
+  width: 75px;
+  z-index: 200;
+  padding-top: 4px;
+  @include giant {
+    width: 220px;
+  }
+  @include mobile {
+    display: none;
+  }
+}
+.sidebar-link {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: pointer;
+  @include giant {
+    flex-direction: row;
+    justify-content: start;
+    padding-left: 20px;
+    height: 50px;
+  }
+  img {
+    height: 25px;
+    margin: 5px;
+  }
+  p {
+    font-size: 10px;
+    @include giant {
+      margin-left: 20px;
+    }
+  }
+  &:hover {
+    background-color: rgb(245, 245, 245);
+  }
+}

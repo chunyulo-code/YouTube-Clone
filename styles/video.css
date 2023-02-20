@@ -1,0 +1,162 @@
+.grid-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -webkit-column-gap: 15px;
+          column-gap: 15px;
+  row-gap: 40px;
+}
+
+@media (min-width: 1200px) {
+  .grid-row {
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 810px) {
+  .grid-row {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 428px) {
+  .grid-row {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+.grid-row .card {
+  width: 100%;
+}
+
+.grid-row .card .video-preview {
+  margin-bottom: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.grid-row .card .video-preview img {
+  width: 100%;
+}
+
+.grid-row .card .video-preview .video-time {
+  background-color: black;
+  color: white;
+  position: absolute;
+  bottom: 8px;
+  right: 5px;
+  padding: 4px;
+  border-radius: 3px;
+}
+
+.grid-row .card .video-des-grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px 1fr;
+      grid-template-columns: 50px 1fr;
+}
+
+.grid-row .card .profile-picture {
+  position: relative;
+}
+
+.grid-row .card .profile-picture .profile-img {
+  width: 75%;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.grid-row .card .profile-picture .profile-img:hover ~ .channel-tooltip {
+  display: block;
+}
+
+.grid-row .card .profile-picture .channel-tooltip {
+  position: absolute;
+  bottom: -80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 250px;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: white;
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  display: none;
+  pointer-events: none;
+  z-index: 300;
+}
+
+.grid-row .card .profile-picture .channel-tooltip .tooltip-profile-img {
+  width: 25%;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.grid-row .card .profile-picture .channel-tooltip .tooltip-content-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+.grid-row .card .profile-picture .channel-tooltip .tooltip-content-box .tooltip-profile-author {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.grid-row .card .profile-picture .channel-tooltip .tooltip-content-box .tooltip-profile-subcribers {
+  font-weight: 400;
+  color: gray;
+}
+
+.grid-row .card .video-info .title {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+  margin-bottom: 18px;
+}
+
+@media (min-width: 1200px) {
+  .grid-row .card .video-info .title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 428px) {
+  .grid-row .card .video-info .title {
+    margin-bottom: 12px;
+  }
+}
+
+.grid-row .card .video-info .author,
+.grid-row .card .video-info .stats {
+  color: gray;
+  font-size: 15px;
+}
+
+@media (min-width: 1200px) {
+  .grid-row .card .video-info .author,
+  .grid-row .card .video-info .stats {
+    font-size: 14px;
+  }
+}
+
+.grid-row .card .video-info .author {
+  margin-bottom: 5px;
+}
+/*# sourceMappingURL=video.css.map */
